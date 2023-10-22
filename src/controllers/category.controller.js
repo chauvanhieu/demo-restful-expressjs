@@ -4,11 +4,11 @@ const CategoryController = {
   getAll: async (req, res) => {
     try {
       const { page = 1, limit = 5, keyword } = req.query;
-      const categories = await CategoryService.getAll({ page, limit, keyword });
+      const data = await CategoryService.getAll({ page, limit, keyword });
       return res.status(200).json({
         page,
         limit,
-        categories,
+        data,
       });
     } catch (error) {
       console.error(error);

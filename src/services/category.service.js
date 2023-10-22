@@ -1,4 +1,4 @@
-const { Sequelize } = require("sequelize");
+const { Op } = require("sequelize");
 const { Category } = require("../models/index");
 
 const CategoryService = {
@@ -13,7 +13,7 @@ const CategoryService = {
     if (keyword) {
       options.where = {
         name: {
-          [Sequelize.Op.like]: `%${keyword}%`,
+          [Op.like]: `%${keyword}%`,
         },
       };
     }

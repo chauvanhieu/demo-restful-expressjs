@@ -15,6 +15,4 @@ sequelize
     console.error("Lỗi kết nối cơ sở dữ liệu:", error);
   });
 
-sequelize.sync(); // gọi lệnh đồng bộ vào database
-
 module.exports = sequelize;

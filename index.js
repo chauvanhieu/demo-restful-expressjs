@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 // import database
-require("./src/configs/database"); // chỉ cần require
+const database = require("./src/configs/database"); // chỉ cần require
 
 // lỗi không đọc được body.json. cần phải import chuyển đổi thành dạng json cho body
 app.use(express.json()); // xong

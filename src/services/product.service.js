@@ -1,4 +1,4 @@
-const { Sequelize } = require("sequelize");
+const { Op } = require("sequelize");
 const { Product } = require("../models/index");
 
 const ProductService = {
@@ -13,7 +13,7 @@ const ProductService = {
     if (keyword) {
       options.where = {
         name: {
-          [Sequelize.Op.like]: `%${keyword}%`,
+          [Op.like]: `%${keyword}%`,
         },
       };
     }
@@ -35,6 +35,7 @@ const ProductService = {
 
   update: async (id, data) => {
     const product = await Product.findByPk(id);
+
     if (!product) {
       return null;
     }

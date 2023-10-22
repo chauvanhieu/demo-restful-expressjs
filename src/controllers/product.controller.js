@@ -4,11 +4,11 @@ const ProductController = {
   getAll: async (req, res) => {
     try {
       const { page = 1, limit = 5, keyword } = req.query;
-      const products = await ProductService.getAll({ page, limit, keyword });
+      const data = await ProductService.getAll({ page, limit, keyword });
       return res.status(200).json({
         page,
         limit,
-        products,
+        data,
       });
     } catch (error) {
       console.error(error);
